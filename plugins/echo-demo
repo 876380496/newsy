@@ -1,0 +1,43 @@
+#!/usr/bin/env bash
+# Example plugin for Newsy.
+# Usage: ./echo-demo validate|fetch < <config-json>
+# This is a demo plugin that returns mock data.
+set -euo pipefail
+
+action="$1"
+
+if [ "$action" = "validate" ]; then
+  echo '{"valid":true}'
+  exit 0
+fi
+
+if [ "$action" = "fetch" ]; then
+  cat <<'JSON'
+{
+  "articles": [
+    {
+      "external_id": "demo-1",
+      "title": "Hello from Plugin",
+      "link": "https://example.com/1",
+      "author": "Plugin Bot",
+      "summary": "This article was fetched by the plugin system.",
+      "content": "<p>Full content here. The plugin system works with any executable.</p>",
+      "published_at": "2026-05-10T00:00:00Z"
+    },
+    {
+      "external_id": "demo-2",
+      "title": "Plugin Architecture",
+      "link": "https://example.com/2",
+      "author": "Plugin Bot",
+      "summary": "Second article from the plugin.",
+      "content": "<p>Plugins communicate via stdin/stdout JSON.</p>",
+      "published_at": "2026-05-09T12:00:00Z"
+    }
+  ]
+}
+JSON
+  exit 0
+fi
+
+echo "unknown action: $action" >&2
+exit 1

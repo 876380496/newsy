@@ -1,0 +1,7 @@
+newsy.db
+newsy.db-shm
+newsy.db-wal
+newsy.lock
+newsy.log
+newsy-v*.tar.gz
+.DS_Store

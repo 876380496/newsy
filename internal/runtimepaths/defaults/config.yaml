@@ -1,0 +1,35 @@
+sources:
+  - key: ithome
+    provider_type: rss
+    name: IT之家
+    enabled: true
+    config:
+      url: https://www.ithome.com/rss/
+
+  - key: 36kr
+    provider_type: rss
+    name: 36氪
+    enabled: true
+    config:
+      url: https://36kr.com/feed
+
+  - key: huxiu
+    provider_type: rss
+    name: 虎嗅
+    enabled: true
+    config:
+      url: https://rss.huxiu.com/
+
+  - key: geekpark
+    provider_type: rss
+    name: 极客公园
+    enabled: true
+    config:
+      url: https://www.geekpark.net/rss
+
+  - key: ifanr
+    provider_type: rss
+    name: 爱范儿
+    enabled: true
+    config:
+      url: https://www.ifanr.com/feed
